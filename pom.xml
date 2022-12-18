@@ -12,6 +12,43 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <flink.version>1.13.0</flink.version>
+        <java.version>1.8</java.version>
+        <scala.binary.version>2.12</scala.binary.version>
+        <slf4j.version>1.7.30</slf4j.version>
     </properties>
-    
+
+    <dependencies>
+        <!-- 添加flink -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-java</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+        <!-- 添加scala-binary -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-streaming-java_${scala.binary.version}</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+        <!-- 添加flink-client -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-clients_${scala.binary.version}</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+        <!-- 添加日志管理依赖 -->
+        <!-- <dependency> -->
+        <!--     <groupId>org.slf4j</groupId> -->
+        <!--     <artifactId>slf4j-api</artifactId> -->
+        <!--     <version>${slf4j.version}</version> -->
+        <!-- </dependency> -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+    </dependencies>
+
 </project>
